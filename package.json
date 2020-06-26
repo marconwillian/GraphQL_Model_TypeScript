@@ -1,0 +1,9 @@
+{
+  "name": "e-commerce-backend",
+  "version": "0.1.0",
+  "description": "Base of E-Commerce backend",
+  "main": "src/server.js",
+  "repository": "https://github.com/MH4SH/E-Commerce_backend.git",
+  "author": "Marcon Willian <marconwillian@protonmail.com>",
+  "license": "MIT"
+}
