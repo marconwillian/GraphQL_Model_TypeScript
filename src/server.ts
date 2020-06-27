@@ -5,6 +5,12 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+import{ Model } from 'objection';
+import connection from './database/connection';
+
+Model.knex(connection);
+
+
 const port = process.env.PORT || 4004;
 
 //https://blog.logrocket.com/integrating-typescript-graphql/

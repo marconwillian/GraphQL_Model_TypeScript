@@ -1,3 +1,7 @@
+import {Teste} from '../../database/models';
+import { GraphQLError } from 'graphql';
+
+
 interface PageInfo{
     endCursor: String
     hasNextPage: Boolean
@@ -15,28 +19,23 @@ const testes = async () => {
 
     return {
       pageInfo,
-      edges: [{
-        node: {
-            name: "Marcon",
-            id: 2
-        }, 
-        cursor: current
-        
-      }],
+      edges: await (await Teste.query()).map(item => ({ node: item, cursor: current })),
     };
   } catch (e) {
-    throw new Error(e.message);
+    throw new GraphQLError(
+      `Validation: Requesting the field ${e.message} is not allowed`,
+    )
   }
 };
 
-const teste = async () => {
+const teste = async (_, args) => {
   try {
-    return {
-        name: "Marcon",
-        id: 2
-    };
+    const teste: Teste = await Teste.query().findById(args.id)
+    return teste;
   } catch (e) {
-    throw new Error(e.message);
+    throw new GraphQLError(
+      `Validation: Requesting the field ${e.message} is not allowed`,
+    )
   }
 };
 
