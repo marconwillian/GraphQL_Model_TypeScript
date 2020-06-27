@@ -10,6 +10,7 @@ const port = process.env.PORT || 4004;
 //https://blog.logrocket.com/integrating-typescript-graphql/
 //https://dev.to/wonder2210/graphql-typescript-postgresql-api-271g
 //https://github.com/ReactFinland/graphql-api
+
 import getTypeDefs from './types';
 import Query from './resolvers/Query';
 import Mutation from './resolvers/Mutation';
