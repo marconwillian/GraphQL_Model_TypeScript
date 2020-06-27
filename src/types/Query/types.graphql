@@ -1,0 +1,4 @@
+type Query {
+    testes: TesteCursor!
+    teste(id: ID!): Teste!
+}

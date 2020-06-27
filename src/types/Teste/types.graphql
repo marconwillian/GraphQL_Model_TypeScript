@@ -1,0 +1,18 @@
+type Teste {
+    id: ID!
+    name: String
+}
+
+input TesteInput {
+    name: String
+}
+
+type TesteCursor {
+    edges: [TesteEdge!]!
+    pageInfo: PageInfo!
+}
+
+type TesteEdge {
+    node: Teste!
+    cursor: String
+}
