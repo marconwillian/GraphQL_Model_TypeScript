@@ -1,14 +1,13 @@
 import { Model } from 'objection';
 
-import User from './User';
+import Teste from './Teste';
 
-class Teste extends Model {
-    static tableName = "teste";
+class User extends Model {
+    static tableName = "user";
     id!: number;
     name?: string;
     created_at?: string;
-    owner_id!: number;
-    owner?: User;
+    testes?: Teste[];
 
     static jsonSchema: {
         type: 'object',
@@ -22,16 +21,16 @@ class Teste extends Model {
     }
 
     static relationMappings = () => ({
-        owner: {
-            relation: Model.BelongsToOneRelation,
-            modelClass: User,
+        testes: {
+            relation: Model.HasManyRelation,
+            modelClass: Teste,
             join: {
-                from: 'teste.owner_id',
-                to: 'user.id'
+                from: 'user.id',
+                to: 'teste.owner_id'
             }
         }
     });
     
 };
 
-export default Teste;
+export default User;
