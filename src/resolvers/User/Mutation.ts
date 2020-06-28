@@ -5,8 +5,6 @@ const createUser = async (_, args) => {
 
     let user: User;
     try {
-        const data = args.input;
-        console.log({...data});
 
         user  = await User.query().insert({...args.input});
        

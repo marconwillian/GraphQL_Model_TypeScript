@@ -31,7 +31,6 @@ const testes = async () => {
 const teste = async (_, args) => {
   try {
     const teste: Teste = await Teste.query().findById(args.id)
-    console.log(teste);
     return teste;
   } catch (e) {
     throw new GraphQLError(

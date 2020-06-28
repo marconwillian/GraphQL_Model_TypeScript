@@ -4,9 +4,7 @@ import { GraphQLError } from 'graphql';
 const createTeste = async (_, args) => {
 
     let teste: Teste;
-    try {
-        const data = args.input;
-        console.log({...data});
+    try {        
 
         teste  = await Teste.query().insert({...args.input});
        
