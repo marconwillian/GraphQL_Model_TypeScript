@@ -1,0 +1,25 @@
+type Teste {
+    id: ID!
+    name: String
+    owner: User
+}
+
+type TesteRelation {
+    id: ID!
+    name: String
+}
+
+input createTesteInput {
+    name: String
+    owner_id: ID!
+}
+
+type TesteCursor {
+    edges: [TesteEdge!]!
+    pageInfo: PageInfo!
+}
+
+type TesteEdge {
+    node: Teste!
+    cursor: String
+}
