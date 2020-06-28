@@ -1,0 +1,4 @@
+type Mutation {
+    createTeste(input: createTesteInput): Teste
+    createUser(input: createUserInput): User
+}

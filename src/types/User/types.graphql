@@ -1,0 +1,19 @@
+type User {
+    id: ID!
+    name: String
+    testes: [TesteRelation]
+}
+
+input createUserInput {
+    name: String!
+}
+
+type UserCursor {
+    edges: [TesteEdge!]!
+    pageInfo: PageInfo!
+}
+
+type UserEdge {
+    node: User!
+    cursor: String
+}
