@@ -1,10 +1,17 @@
 type Teste {
     id: ID!
     name: String
+    owner: User
 }
 
-input TesteInput {
+type TesteRelation {
+    id: ID!
     name: String
+}
+
+input createTesteInput {
+    name: String
+    owner_id: ID!
 }
 
 type TesteCursor {
