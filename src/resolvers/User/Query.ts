@@ -1,4 +1,4 @@
-import {Teste} from '../../database/models';
+import { User } from '../../database/models';
 import { GraphQLError } from 'graphql';
 
 
@@ -13,13 +13,13 @@ const pageInfo: PageInfo = {
 }
 
 
-const testes = async () => {
+const users = async () => {
   try {
     const current = "CURSOR NÃO ARRUMADO";
 
     return {
       pageInfo,
-      edges: await (await Teste.query()).map(item => ({ node: item, cursor: current })),
+      edges: await (await User.query()).map(item => ({ node: item, cursor: current })),
     };
   } catch (e) {
     throw new GraphQLError(
@@ -28,11 +28,10 @@ const testes = async () => {
   }
 };
 
-const teste = async (_, args) => {
+const user = async (_, args) => {
   try {
-    const teste: Teste = await Teste.query().findById(args.id)
-    console.log(teste);
-    return teste;
+    const user: User = await User.query().findById(args.id)
+    return user;
   } catch (e) {
     throw new GraphQLError(
       `Validation: Requesting the field ${e.message} is not allowed`,
@@ -41,6 +40,6 @@ const teste = async (_, args) => {
 };
 
 export default {
-  testes,
-  teste
+  users,
+  user
 };
