@@ -18,7 +18,7 @@
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
     "graphql": "^15.1.0",
-    "graphql-tools": "^6.0.11",
+    "graphql-tools": "^6.2.4",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.21.1",
     "objection": "^2.2.0",
