@@ -7,9 +7,7 @@
   "author": "Marcon Willian <marconwillian@protonmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev src/server.ts",
-    "test": "cross-env NODE_ENV=test jest",
-    "heroku-postbuild": "npx knex migrate:latest --env production"
+    "dev": "ts-node-dev src/server.ts"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
