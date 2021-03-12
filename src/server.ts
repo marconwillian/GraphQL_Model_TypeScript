@@ -1,9 +1,7 @@
 import express from 'express';
 import { graphqlHTTP } from 'express-graphql';
 import { makeExecutableSchema } from "graphql-tools";
-import dotenv from 'dotenv';
-
-dotenv.config();
+import 'dotenv/config';
 
 import{ Model } from 'objection';
 import connection from './database/connection';
@@ -21,7 +19,7 @@ import getTypeDefs from './types';
 import Query from './resolvers/Query';
 import Mutation from './resolvers/Mutation';
 
-//Enuns and Types of elements 
+//Enuns and Types of elements
 import Types from './resolvers/Types';
 
 const startServer = () => {
@@ -34,9 +32,9 @@ const startServer = () => {
             Mutation
         };
         const typeDefs = getTypeDefs();
-    
+
         const schema = makeExecutableSchema({ typeDefs, resolvers });
-    
+
         app.use(
             "/graphql",
             graphqlHTTP({

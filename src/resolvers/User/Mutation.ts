@@ -7,11 +7,11 @@ const createUser = async (_, args) => {
     try {
 
         user  = await User.query().insert({...args.input});
-       
+
     } catch (error) {
         console.log(error)
         throw new GraphQLError("Bad user input fields required");
-        
+
     }
     return user;
 }

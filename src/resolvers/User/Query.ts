@@ -2,7 +2,7 @@ import { User } from '../../database/models';
 import { GraphQLError } from 'graphql';
 
 
-interface PageInfo{
+export interface PageInfo {
     endCursor: String
     hasNextPage: Boolean
 }

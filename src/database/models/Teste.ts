@@ -31,7 +31,7 @@ class Teste extends Model {
             }
         }
     });
-    
+
 };
 
 export default Teste;
